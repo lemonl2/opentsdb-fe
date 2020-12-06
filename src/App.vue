@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+      <div class="home">
+    <el-menu
+      default-active="1"
+      class="el-menu-demo"
+      mode="horizontal"
+      background-color="#545c64"
+      text-color="#fff"
+      active-text-color="#ffd04b">
+      <el-menu-item index="1">opentsdb 采集管理</el-menu-item>
+    </el-menu>
+    <router-view></router-view>
+  </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    // WorkBench,
   },
 })
 export default class App extends Vue {}
@@ -22,8 +31,24 @@ export default class App extends Vue {}
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  // text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  // margin-top: 60px;
+}
+
+.el-menu-demo {
+  margin: -8px !important;
+}
+
+.el-menu-item {
+  font-size: 18px !important;
+}
+
+.main {
+  margin: 10px;
+}
+
+.el-drawer {
+  overflow: auto !important;
 }
 </style>
